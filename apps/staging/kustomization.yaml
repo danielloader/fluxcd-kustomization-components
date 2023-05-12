@@ -6,4 +6,4 @@ resources:
 patchesStrategicMerge:
   - podinfo-values.yaml
 components:
-  - ../../components/pause
+  - components/pause
