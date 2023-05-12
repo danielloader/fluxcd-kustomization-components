@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pause
+  namespace: podinfo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: pause
+  template:
+    metadata:
+      labels:
+        run: pause
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: reserve-resources
+        image: registry.k8s.io/pause:3.9
+        resources:
+          requests:
+            cpu: "200m"
